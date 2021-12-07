@@ -47,6 +47,15 @@ public class BookService {
 
 	//	//// UPDATE ////////////////////////////////////////////
 	
+	public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
+		Book book = this.findBook(id);
+		if (book == null) {
+			return null;
+		} else {
+			return this.bookRepository.save(book);
+		}
+	}
+	
 	//	//// DELETE ////////////////////////////////////////////
 	
 }
