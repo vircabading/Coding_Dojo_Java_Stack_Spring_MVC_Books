@@ -1,5 +1,13 @@
 package com.vcabading.books.service;
 
-public class BookService {
+import org.springframework.stereotype.Service;
+import com.vcabading.books.repositories.BookRepository;
 
+////////////////////////////////////////////////////////////////
+// BOOK SERVICE
+////////////////////////////////////////////////////////////////
+
+@Service
+public class BookService {
+	private final BookRepository bookRepository;
 }
