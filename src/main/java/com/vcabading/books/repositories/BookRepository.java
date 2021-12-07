@@ -17,4 +17,12 @@ public interface BookRepository extends CrudRepository<Book, Long> {
 	// **** Retrieve all the books *********************************
 	List<Book> findAll();
 
+	// **** Retrieve books with descriptions containing the search string
+    List<Book> findByDescriptionContaining(String search);
+    
+    // **** Counts how many titles contain a certain string ********
+    Long countByTitleContaining(String search);
+    
+    // **** Delete a book that starts with a specific title ********
+    Long deleteByTitleStartingWith(String search);
 }
