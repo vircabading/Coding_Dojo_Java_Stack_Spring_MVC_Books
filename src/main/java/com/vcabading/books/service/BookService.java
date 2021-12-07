@@ -10,4 +10,10 @@ import com.vcabading.books.repositories.BookRepository;
 @Service
 public class BookService {
 	private final BookRepository bookRepository;
+	
+	//	//// CONSTRUCTORS //////////////////////////////////////
+	
+	public BookService(BookRepository bookRepository) {
+		
+	}
 }
