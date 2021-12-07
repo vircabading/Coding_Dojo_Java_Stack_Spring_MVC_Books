@@ -39,8 +39,11 @@ public class Book {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
+    //	//// CONSTRUCTORS //////////////////////////////////////////
+    
     public Book() {
     }
+    
     public Book(String title, String desc, String lang, int pages) {
         this.title = title;
         this.description = desc;
@@ -57,6 +60,9 @@ public class Book {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+    
+    //	//// GETTERS AND SETTERS ///////////////////////////////////
+    
 	public Long getId() {
 		return id;
 	}

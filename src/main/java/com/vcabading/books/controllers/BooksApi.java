@@ -27,6 +27,8 @@ public class BooksApi {
 		this.bookService = bookService;
 	}
 	
+	
+	
 	//	//// POST ///////////////////////////////////////////
 	
 	@RequestMapping(value="/api/books", method=RequestMethod.POST)
@@ -37,8 +39,16 @@ public class BooksApi {
 	
 	//	//// RETRIEVE ///////////////////////////////////////
 	
+	//	**** Get All Books **********************************
 	@RequestMapping("/api/books")
     public List<Book> index() {
         return bookService.allBooks();
+    }
+	
+	//	**** Get Book by ID *********************************
+	@RequestMapping("/api/books/{id}")
+    public Book show(@PathVariable("id") Long id) {
+        Book book = bookService.findBook(id);
+        return book;
     }
 }
