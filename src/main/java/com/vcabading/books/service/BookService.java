@@ -55,6 +55,8 @@ public class BookService {
 			book.setDescription(desc);
 			book.setLanguage(lang);
 			book.setNumberOfPages(numOfPages);
+			System.out.println("**** In updateBook ****");
+			System.out.println("T: " + book.getTitle() + " D:" + book.getDescription() + " L:" + book.getLanguage() + " P:" + book.getNumberOfPages() );
 			return this.bookRepository.save(book);
 		} else {
 			return null;
