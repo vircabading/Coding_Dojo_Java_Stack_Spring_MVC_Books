@@ -28,6 +28,7 @@ public class BookController {
 	
 	//	//// RETRIEVE ///////////////////////////////////////
 	
+	//	**** Get One Book by ID *****************************
 	@GetMapping("/books/{id}")
 	public String booksID(@PathVariable("id") Long id, Model model) {
 		Book book = bookService.findBook(id);
@@ -35,8 +36,11 @@ public class BookController {
 		return "booksid.jsp";
 	}
 	
+	//	**** Get All Books **********************************
 	@GetMapping("/books")
-	public String books() {
+	public String books(Model model) {
+		List<Book> books = bookService.allBooks();
+		model.addAttribute("books", books);
 		return "books.jsp";
 	}
 }
