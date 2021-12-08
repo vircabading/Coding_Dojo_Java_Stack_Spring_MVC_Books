@@ -46,7 +46,9 @@
 					<c:forEach var="book" items="${ books }">
 						<tr>
 							<th scope="row">${ book.id }</th>
-							<td>${ book.title }</td>
+							<td>
+								<a href="/books/${ book.id }">${ book.title }</a>
+							</td>
 							<td>${ book.language }</td>
 							<td>${ book.numberOfPages }</td>
 						</tr>
